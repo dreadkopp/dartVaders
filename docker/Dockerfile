@@ -44,6 +44,7 @@ RUN apk add zlib-dev libpng-dev \
        freetype-dev \
        libjpeg-turbo-dev \
        && docker-php-ext-configure gd --with-libdir=/usr/include/ --with-jpeg  --with-freetype \
-       && docker-php-ext-install gd
+       && docker-php-ext-install gd \
+       && docker-php-ext-install exif
 
 ENTRYPOINT ["/rundev.sh"]
