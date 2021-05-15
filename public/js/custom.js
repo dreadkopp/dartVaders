@@ -11,7 +11,7 @@ $(function () {
 
 	setTimeout(function () {
 		$('.loader_bg').fadeToggle();
-	}, 1500);
+	}, 300);
 
 	/* JQuery Menu
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -78,7 +78,7 @@ $(function () {
 	});
 
 
-	
+
 	/* OwlCarousel - Banner Rotator Slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
@@ -361,7 +361,7 @@ $(function () {
 		});
 	});
 
-	/* Product slider 
+	/* Product slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	// optional
 	$('#blogCarousel').carousel({

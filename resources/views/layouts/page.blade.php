@@ -5,8 +5,11 @@
 @endsection
 
 @section('content')
-    <div class="col">
-        <img class="img-fluid" src="{{ $page->image }}"/>
+    <div class="row">
+        <img class="img-fluid" src="storage/{{ $page->image }}"/>
     </div>
-    {!! $page->body !!}
+
+    <div class="row mt-5">
+        {!! $page->body !!}
+    </div>
 @endsection

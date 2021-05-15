@@ -31,23 +31,27 @@
 <!-- body -->
 <body class="main-layout">
 <!-- loader  -->
+
+<!--
 <div class="loader_bg">
     <div class="loader"><img src="images/loading.gif" alt="" /></div>
 </div>
+-->
+
 <!-- end loader -->
 <!-- header -->
 <header>
     <!-- header inner -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 logo_section">
+            <div class="col-2 logo_section">
                 <div class="full">
                     <div class="center-desk">
-                        <div class="logo"> <a href="index.html"><img class="img-fluid" style="max-height: 7rem" src="img/logo.jpeg" alt="LOGO"></a> </div>
+                        <div class="logo"> <a href="/"><img class="img-fluid" style="max-height: 7rem" src="img/logo.jpeg" alt="LOGO"></a> </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9">
+            <div class="col">
                 @include('layouts.navigation')
             </div>
         </div>
@@ -71,7 +75,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>Copyright © {{ date('Y') }} DartVaders</p>
+                <p><a href="/impressum">Impressum</a> | Copyright © {{ date('Y') }} DartVaders</p>
             </div>
         </div>
     </div>

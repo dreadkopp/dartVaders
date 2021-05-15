@@ -4,10 +4,12 @@
 namespace App\Http\Controllers;
 
 
-use TCG\Voyager\Models\Page;
+use App\Models\Page;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 /**
- * @Middleware("guest")
+ * @Middleware("web")
  */
 class PageController extends Controller
 {
@@ -18,6 +20,9 @@ class PageController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function lander() {
+
+        /** @var User $user */
+        $user = Auth::user();
 
         $page = Page::query()->active()->first();
 

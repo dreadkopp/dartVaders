@@ -15,23 +15,25 @@
                     <a href="/shop">Shop</a>
                 </li>
                 <li>
-                    <a href="/shop">Shop</a>
-                </li>
-                <li>
                     <a href="/guestbook">Gästebuch</a>
                 </li>
-                @if(\Illuminate\Support\Facades\Auth::check())
+                @if(Auth::check())
                     <li>
-                        <a href="/login">Kalender</a>
+                        <a href="/kalender">Kalender</a>
                     </li>
                     <li>
-                        <a href="/login">Scoreboard</a>
+                        <a href="/scores">Scoreboard</a>
                     </li>
                     <li>
-                        <a href="/login">Strafen</a>
+                        <a href="/penalty">Strafen</a>
                     </li>
+                    @if(Auth::user()->hasRole('admin'))
                     <li>
-                        <a href="/logout">Logout</a>
+                        <a href="/Admin">Admin</a>
+                    </li>
+                    @endif
+                    <li>
+                        <a href="/logoff">Logout</a>
                     </li>
                 @else
                 <li>
