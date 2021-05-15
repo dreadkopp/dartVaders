@@ -10,6 +10,7 @@ class Page extends \TCG\Voyager\Models\Page
         'home',
         'about',
         'impressum',
+        'datenschutz'
     ];
 
     public function delete()

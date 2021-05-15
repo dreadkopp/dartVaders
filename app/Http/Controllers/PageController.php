@@ -37,6 +37,7 @@ class PageController extends Controller
     public function index(string $slug) {
 
         $page = null;
+        $code = 200;
         if (is_numeric($slug)) {
             $page = Page::query()->active()->findOrFail($slug);
         }

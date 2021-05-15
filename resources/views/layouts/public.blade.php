@@ -47,7 +47,7 @@
             <div class="col-2 logo_section">
                 <div class="full">
                     <div class="center-desk">
-                        <div class="logo"> <a href="/"><img class="img-fluid" style="max-height: 7rem" src="img/logo.jpeg" alt="LOGO"></a> </div>
+                        <div class="logo"> <a href="/"><img class="img-fluid" style="max-height: 7rem" src="/img/logo.jpeg" alt="LOGO"></a> </div>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p><a href="/page/impressum">Impressum</a> | Copyright © {{ date('Y') }} DartVaders</p>
+                <p><a href="/page/impressum">Impressum</a> | <a href="/page/datenschutz">Datenschutz</a> | Copyright © {{ date('Y') }} DartVaders</p>
             </div>
         </div>
     </div>
@@ -90,5 +90,6 @@
 <!-- Scrollbar Js Files -->
 <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="/js/custom.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?theme=momh&tracking=1&always=1&showNoConsent=1&noConfirm=1&remember=365&privacyPage=%2Fpage%2Fdatenschutz"></script>
 </body>
 </html>
