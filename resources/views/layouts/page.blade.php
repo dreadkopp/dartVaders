@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    @if($page->impressum)
+    @if($page->image)
     <div class="row">
         <img class="img-fluid" src="storage/{{ $page->image }}"/>
     </div>
