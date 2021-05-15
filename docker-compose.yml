@@ -1,0 +1,79 @@
+version: '3.6'
+
+networks:
+  dev_net:
+    name: dev_net
+
+services:
+
+  web:
+    ports:
+    - 80:80
+    - 443:443
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+      args:
+        - UID=$UID
+    image: dv-sail:dev
+    environment:
+      - PHP_CS_FIXER_IGNORE_ENV=true
+      - SPOT_DB_HOST=dv_db
+    volumes:
+      - ./:/var/www/dartVaders:cached
+      - framework_cache:/var/www/dartVaders/storage/framework/cache
+      - views_cache:/var/www/dartVaders/storage/framework/views
+      - bootstrap_cache:/var/www/dartVaders/bootstrap/cache
+    networks:
+      - dev_net
+    healthcheck:
+      test: [ "CMD", "curl", "--fail", "localhost" ]
+      interval: 10s
+      timeout: 20s
+      retries: 10
+
+  dv_db:
+    image: mariadb:10.4
+    networks:
+      - dev_net
+    ports:
+      - 9306:3306
+    volumes:
+      - maria:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=geheim
+      - MYSQL_DATABASE=dart_vaders
+      - MYSQL_USER=dv
+      - MYSQL_PASSWORD=geheim
+      - TZ=Europe/Berlin
+
+
+  dv_redis:
+    image: redis:6-alpine
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_REPLICATION_MODE=master
+      - REDIS_MASTER_PASSWORD=geheim
+      - REDIS_PASSWORD=geheim
+    networks:
+      - dev_net
+
+  dv_mailhog:
+    image: 'mailhog/mailhog:latest'
+    networks:
+      - dev_net
+
+volumes:
+  maria:
+  framework_cache:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+  views_cache:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+  bootstrap_cache:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
