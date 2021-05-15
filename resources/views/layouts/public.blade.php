@@ -75,7 +75,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p><a href="/impressum">Impressum</a> | Copyright © {{ date('Y') }} DartVaders</p>
+                <p><a href="/page/impressum">Impressum</a> | Copyright © {{ date('Y') }} DartVaders</p>
             </div>
         </div>
     </div>

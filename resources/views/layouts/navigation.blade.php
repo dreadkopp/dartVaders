@@ -6,10 +6,10 @@
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/about">Über uns</a>
+                    <a href="/page/about">Über uns</a>
                 </li>
                 <li>
-                    <a href="blog.html">Blog</a>
+                    <a href="/blog">Blog</a>
                 </li>
                 <li>
                     <a href="/shop">Shop</a>
@@ -29,7 +29,7 @@
                     </li>
                     @if(Auth::user()->hasRole('admin'))
                     <li>
-                        <a href="/Admin">Admin</a>
+                        <a href="/admin">Admin</a>
                     </li>
                     @endif
                     <li>
