@@ -41,6 +41,9 @@ RUN addgroup -S sail && adduser -S sail -G sail -u $UID
 RUN echo 'export PS1="\u@\w:>"' > /home/sail/.bashrc
 
 RUN apk add zlib-dev libpng-dev \
-  && docker-php-ext-install gd
+       freetype-dev \
+       libjpeg-turbo-dev \
+       && docker-php-ext-configure gd --with-libdir=/usr/include/ --with-jpeg  --with-freetype \
+       && docker-php-ext-install gd
 
 ENTRYPOINT ["/rundev.sh"]
