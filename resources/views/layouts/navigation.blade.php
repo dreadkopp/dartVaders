@@ -19,7 +19,7 @@
                 </li>
                 @if(Auth::check())
                     <li>
-                        <a href="/kalender">Kalender</a>
+                        <a href="/events">Kalender</a>
                     </li>
                     <li>
                         <a href="/scores">Scoreboard</a>
