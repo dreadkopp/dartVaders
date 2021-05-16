@@ -37,6 +37,16 @@
         })(window,document,'script','dataLayer','GTM-NSKH3WX');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6DZ94FNWZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-F6DZ94FNWZ');
+    </script>
+
 </head>
 <!-- body -->
 <body class="main-layout">
