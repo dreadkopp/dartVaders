@@ -15,7 +15,7 @@
                     <a href="/shop">Shop</a>
                 </li>
                 <li>
-                    <a href="/gallery">Bilder</a>
+                    <a href="/galery">Bilder</a>
                 </li>
                 <li>
                     <a href="/visitors">Gästebuch</a>
