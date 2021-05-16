@@ -8,7 +8,7 @@ use Acaronlex\LaravelCalendar\Calendar;
 use Illuminate\Support\Facades\Auth;
 
 /**
- * @Middleware("web")
+ * @Middleware("auth")
  */
 class EventsController extends Controller
 {
