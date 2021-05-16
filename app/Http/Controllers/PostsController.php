@@ -20,7 +20,7 @@ class PostsController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function getData() {
-        $posts = Post::query()->paginate(2);
+        $posts = Post::query()->paginate(3);
         return view('layouts.posts', compact('posts'))->with('title', 'Blog');
     }
 

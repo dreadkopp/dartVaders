@@ -15,7 +15,10 @@
                     <a href="/shop">Shop</a>
                 </li>
                 <li>
-                    <a href="/guestbook">Gästebuch</a>
+                    <a href="/gallery">Bilder</a>
+                </li>
+                <li>
+                    <a href="/visitors">Gästebuch</a>
                 </li>
                 @if(Auth::check())
                     <li>
