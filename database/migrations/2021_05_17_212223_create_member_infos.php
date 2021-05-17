@@ -13,9 +13,7 @@ class CreateMemberInfos extends Migration
      */
     public function up()
     {
-        Schema::create('member_infos', function (Blueprint $table) {
-            $table->id();
-            $table->integer('user_id');
+        Schema::table('users', function (Blueprint $table) {
             $table->enum('wurfhand',['links','rechts'])->nullable();
             $table->string('setup_arrows')->nullable();
             $table->string('setup_board')->nullable();
@@ -25,7 +23,6 @@ class CreateMemberInfos extends Migration
             $table->string('patches')->nullable();
             $table->integer('hundredeighties')->default(0);
             $table->integer('greatest_finish')->nullable();
-            $table->timestamps();
         });
     }
 
@@ -36,6 +33,16 @@ class CreateMemberInfos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('member_infos');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('wurfhand');
+            $table->dropColumn('setup_arrows');
+            $table->dropColumn('setup_board');
+            $table->dropColumn('fav_finish');
+            $table->dropColumn('entry_music');
+            $table->dropColumn('fav_player');
+            $table->dropColumn('patches');
+            $table->dropColumn('hundredeighties');
+            $table->dropColumn('greatest_finish');
+        });
     }
 }
