@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Notifications\Notifiable;
 
 class User extends \TCG\Voyager\Models\User
@@ -30,6 +31,14 @@ class User extends \TCG\Voyager\Models\User
         'password',
         'remember_token',
     ];
+    
+    protected $with = ['member_info'];
+    
+    
+    public function member_info() :HasOne
+    {
+        return $this->hasOne(MemberInfo::class);
+    }
 
     /**
      * The attributes that should be cast to native types.

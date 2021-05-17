@@ -25,6 +25,10 @@ RUN set -xe \
     && docker-php-source extract \
     && docker-php-ext-install pdo_dblib \
     && docker-php-ext-install pdo pdo_mysql \
+    && apk add zlib-dev libpng-dev freetype-dev libjpeg-turbo-dev \
+    && docker-php-ext-configure gd --with-libdir=/usr/include/ --with-jpeg  --with-freetype \
+    && docker-php-ext-install gd \
+    && docker-php-ext-install exif \
     && apk del .build-deps
 
 
@@ -32,7 +36,6 @@ RUN set -xe \
 RUN mkdir /etc/nginx/sites-enabled
 COPY ./conf/nginx.conf /etc/nginx/conf.d/default.conf
 COPY ./conf/nginx_base.conf /etc/nginx/nginx.conf
-COPY ./entrypoints/rundev.sh /rundev.sh
 RUN chown -R nginx:www-data /var/lib/nginx
 RUN chmod -R 0770 /var/lib/nginx/tmp
 
@@ -40,11 +43,6 @@ ARG UID
 RUN addgroup -S sail && adduser -S sail -G sail -u $UID
 RUN echo 'export PS1="\u@\w:>"' > /home/sail/.bashrc
 
-RUN apk add zlib-dev libpng-dev \
-       freetype-dev \
-       libjpeg-turbo-dev \
-       && docker-php-ext-configure gd --with-libdir=/usr/include/ --with-jpeg  --with-freetype \
-       && docker-php-ext-install gd \
-       && docker-php-ext-install exif
 
+COPY ./entrypoints/rundev.sh /rundev.sh
 ENTRYPOINT ["/rundev.sh"]

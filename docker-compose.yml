@@ -18,7 +18,7 @@ services:
     image: dv-sail:dev
     environment:
       - PHP_CS_FIXER_IGNORE_ENV=true
-      - SPOT_DB_HOST=dv_db
+      - DB_HOST=dv_db
     volumes:
       - ./:/var/www/dartVaders:cached
       - framework_cache:/var/www/dartVaders/storage/framework/cache
@@ -36,8 +36,6 @@ services:
     image: mariadb:10.4
     networks:
       - dev_net
-    ports:
-      - 9306:3306
     volumes:
       - maria:/var/lib/mysql
     environment:

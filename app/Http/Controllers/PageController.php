@@ -24,7 +24,7 @@ class PageController extends Controller
         /** @var User $user */
         $user = Auth::user();
 
-        $page = Page::query()->active()->first();
+        $page = Page::query()->active()->firstOrNew();
 
         return view('layouts.page',)->with('page',$page);
     }
