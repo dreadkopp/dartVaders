@@ -23,6 +23,7 @@ class CreateMemberInfos extends Migration
             $table->string('patches')->nullable();
             $table->integer('hundredeighties')->default(0);
             $table->integer('greatest_finish')->nullable();
+            $table->text('bio')->nullable();
         });
     }
 
@@ -43,6 +44,7 @@ class CreateMemberInfos extends Migration
             $table->dropColumn('patches');
             $table->dropColumn('hundredeighties');
             $table->dropColumn('greatest_finish');
+            $table->dropColumn('bio');
         });
     }
 }
