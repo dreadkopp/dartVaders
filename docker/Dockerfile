@@ -46,3 +46,17 @@ RUN echo 'export PS1="\u@\w:>"' > /home/sail/.bashrc
 
 COPY ./entrypoints/rundev.sh /rundev.sh
 ENTRYPOINT ["/rundev.sh"]
+
+RUN apk add netcat-openbsd bc curl wget git bash openssl libressl
+RUN mkdir /acme && cd /acme && git clone https://github.com/Neilpang/acme.sh.git .
+RUN mkdir -vp /var/www/dartVaders/.well-known/acme-challenge/ \
+ && chown -R nginx:nginx /var/www/dartVaders/.well-known/acme-challenge/ \
+ && chmod -R 0555 /var/www/dartVaders/.well-known/acme-challenge/ \
+ && mkdir -p /etc/nginx/ssl/letsencrypt/dart-vaders.eu \
+ && cd /etc/nginx/ssl/letsencrypt/dart-vaders.eu \
+ && openssl dhparam -dsaparam -out dhparams.pem 4096 \
+ && openssl req -x509 -nodes -subj '/C=DE/ST=MD/L=MD/O=DV/CN=dart-vaders.eu' -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/letsencrypt/dart-vaders.eu/dart-vaders.eu.key -out /etc/nginx/ssl/letsencrypt/dart-vaders.eu/dart-vaders.eu.cer
+
+
+
+

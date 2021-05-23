@@ -24,6 +24,7 @@ services:
       - framework_cache:/var/www/dartVaders/storage/framework/cache
       - views_cache:/var/www/dartVaders/storage/framework/views
       - bootstrap_cache:/var/www/dartVaders/bootstrap/cache
+      -
     networks:
       - dev_net
     healthcheck:
