@@ -1,0 +1,1 @@
+0 0 */14 * * /var/www/dartVaders/docker/bin/issue_cert.sh

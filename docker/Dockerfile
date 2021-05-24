@@ -57,6 +57,7 @@ RUN mkdir -vp /var/www/dartVaders/.well-known/acme-challenge/ \
  && openssl dhparam -dsaparam -out dhparams.pem 4096 \
  && openssl req -x509 -nodes -subj '/C=DE/ST=MD/L=MD/O=DV/CN=dart-vaders.eu' -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/letsencrypt/dart-vaders.eu/dart-vaders.eu.key -out /etc/nginx/ssl/letsencrypt/dart-vaders.eu/dart-vaders.eu.cer
 
-
+COPY ./cron/cron.cnf /etc/crontab/nginx
+COPY ./cron/main.cnf /etc/crontab/root
 
 
