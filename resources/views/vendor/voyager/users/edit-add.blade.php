@@ -90,6 +90,7 @@
                     <div class="panel panel panel-bordered panel-warning">
                         <div class="panel-body">
                             <div class="form-group">
+                                <input type="file" data-name="avatar" name="avatar">
                             </div>
                         </div>
                     </div>
@@ -100,10 +101,61 @@
                     <div class="panel panel panel-bordered panel-warning">
                         <div class="panel-body">
                             <div class="form-group">
-                                <input type="file" data-name="avatar" name="avatar">
+                                <label for="wurfhand">Wurfhand</label>
+                                <input type="text" data-name="wurfhand" name="wurfhand">
                             </div>
                         </div>
                     </div>
+
+
+
+                    <div class="panel panel panel-bordered panel-warning">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="fav_finish">Lieblingsfinish</label>
+                                <input type="text" data-name="fav_finish" name="fav_finish"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel panel-bordered panel-warning">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="entry_music">Einlaufmusik</label>
+                                <input type="text" data-name="entry_music" name="entry_music"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel panel-bordered panel-warning">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="fav_player">Lieblingsspieler</label>
+                                <input type="text" data-name="fav_player" name="fav_player"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel panel-bordered panel-warning">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="hundredeighties">180's</label>
+                                <input type="number" data-name="hundredeighties" name="hundredeighties" value="{{ $dataTypeContent->hundredeighties }}"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel panel-bordered panel-warning">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="greatest_finish">Bestes Finish</label>
+                                <input type="number" data-name="greatest_finish" name="greatest_finish"/>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 

@@ -21,7 +21,7 @@ class CreateMemberInfos extends Migration
             $table->string('entry_music')->nullable();
             $table->string('fav_player')->nullable();
             $table->string('patches')->nullable();
-            $table->integer('hundredeighties')->default(0);
+            $table->integer('hundredeighties')->nullable();
             $table->integer('greatest_finish')->nullable();
             $table->text('bio')->nullable();
         });

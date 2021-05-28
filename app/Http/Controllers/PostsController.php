@@ -15,7 +15,7 @@ class PostsController extends Controller
 {
 
     /**
-     * @Get("/blog",as="blog.list")
+     * @Get("/",as="blog.list")
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */

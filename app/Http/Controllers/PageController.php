@@ -15,21 +15,6 @@ class PageController extends Controller
 {
 
     /**
-     * @Get("/", as="page.lander")
-     * @param string $slug
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
-    public function lander() {
-
-        /** @var User $user */
-        $user = Auth::user();
-
-        $page = Page::query()->active()->firstOrNew();
-
-        return view('layouts.page',)->with('page',$page);
-    }
-
-    /**
      * @Get("/page/{slug}", as="page.view")
      * @param string $slug
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View

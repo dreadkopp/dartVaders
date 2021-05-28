@@ -3,23 +3,19 @@
         <nav class="main-menu">
             <ul class="menu-area-main">
                 <li class="active">
-                    <a href="/">Home</a>
+                    <a href="/">Blog</a>
                 </li>
                 <li>
                     <a href="/page/about">Über uns</a>
                 </li>
                 <li>
-                    <a href="/blog">Blog</a>
+                    <a href="/galery">Bilder</a>
                 </li>
                 <li>
                     <a href="/shop">Shop</a>
                 </li>
-                <li>
-                    <a href="/galery">Bilder</a>
-                </li>
-                <li>
-                    <a href="/visitors">Gästebuch</a>
-                </li>
+
+
                 @if(Auth::check())
                     <li>
                         <a href="/events">Kalender</a>
