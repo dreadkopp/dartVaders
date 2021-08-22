@@ -3,10 +3,10 @@
         <nav class="main-menu">
             <ul class="menu-area-main">
                 <li class="active">
-                    <a href="/">Blog</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/page/about">Über uns</a>
+                    <a href="/about_us">Über uns</a>
                 </li>
                 <li>
                     <a href="/galery">Bilder</a>
