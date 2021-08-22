@@ -23,8 +23,7 @@ RUN set -xe \
     && apk add --no-cache --virtual .persistent-deps freetds unixodbc \
     && apk add --no-cache --virtual .build-deps $PHPIZE_DEPS unixodbc-dev freetds-dev \
     && docker-php-source extract \
-    && docker-php-ext-install pdo_dblib \
-    && docker-php-ext-install pdo pdo_mysql \
+    && docker-php-ext-install pdo_dblib pdo pdo_mysql \
     && apk add zlib-dev libpng-dev freetype-dev libjpeg-turbo-dev \
     && docker-php-ext-configure gd --with-libdir=/usr/include/ --with-jpeg  --with-freetype \
     && docker-php-ext-install gd \

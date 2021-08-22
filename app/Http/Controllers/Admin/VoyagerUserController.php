@@ -7,6 +7,7 @@ use GuzzleHttp\Psr7\UploadedFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Image;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\VoyagerUserController as BaseVoyagerUserController;
 
@@ -46,11 +47,25 @@ class VoyagerUserController extends BaseVoyagerUserController
     public function avatar(Request $request) {
 
         /** @var \Illuminate\Http\UploadedFile $img */
-        $img = $request->file('avatar');
+        $input_image= $request->file('avatar');
 
-        Storage::disk('public')->put($img->getClientOriginalName(),$img->getContent());
 
-        $img_link = '/storage/'.$img->getClientOriginalName();
+        // CROP IT
+
+        $img = \Intervention\Image\Facades\Image::make($input_image);
+
+        $smallest = min($img->getWidth(),$img->getHeight());
+        $img_blob = $img->crop($smallest,$smallest,0,0)
+            ->resize(256,256)
+            ->encode('jpg',80);
+
+        $user = Auth::user();
+
+        $img_link = $user->name.'__'.$user->id.'.jpg';
+
+        Storage::disk('public')->put($img_link,$img_blob);
+
+
 
         $user = Auth::user();
 
@@ -58,7 +73,7 @@ class VoyagerUserController extends BaseVoyagerUserController
         $user->save();
 
 
-        return response()->json(['img' => asset($img_link)]);
+        return response()->json(['img' => asset('/storage/'.$img_link)]);
 
 
     }

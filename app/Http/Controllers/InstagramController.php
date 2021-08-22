@@ -7,7 +7,6 @@ namespace App\Http\Controllers;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Cache;
-use const ud83c\udfaf\ud83d\udcaf\n\nWie;
 
 /**
  * @Middleware ("web")

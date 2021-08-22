@@ -13,6 +13,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "^2.6",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "laravelcollective/annotations": "^8.0",
@@ -59,13 +60,14 @@
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
+
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": {
         "hooks": {
             "type": "composer",
-            "url": "https://larapack.io"
+            "url": "https://packagist.org"
         }
     }
 }
