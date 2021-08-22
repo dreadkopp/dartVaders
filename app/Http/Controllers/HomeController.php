@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts = Post::query()->paginate(3);
+        return view('layouts.posts', compact('posts'))->with('title', 'Blog');
     }
 }
