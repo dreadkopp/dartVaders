@@ -38,7 +38,12 @@ class InstagramController extends Controller
                 ->reject(fn($i) => $i->node->is_video)
                 ->map(fn($i) => $i->node)
                 ->each(function($i) {
-                    $i->b64_img = 'data:image/jpg;base64,'.base64_encode(file_get_contents($i->display_url));
+                    try {
+                        $i->b64_img = 'data:image/jpg;base64,'.base64_encode(file_get_contents($i->display_url));
+                    } catch (\Exception $e) {
+                        //catch 403
+                        $i->b64_img = '';
+                    }
                 });
             Cache::put('C_INSTAFEED', $images, 1800);
         }

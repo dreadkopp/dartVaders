@@ -27,7 +27,7 @@ return [
     */
 
     'controllers' => [
-        'namespace' => 'TCG\\Voyager\\Http\\Controllers',
+        'namespace' => 'App\\Http\\Controllers\\Admin',
     ],
 
     /*
@@ -104,13 +104,13 @@ return [
         /*
          * Select default language
          */
-        'default' => 'en',
+        'default' => 'de',
 
         /*
          * Select languages that are supported.
          */
         'locales' => [
-            'en',
+            'de',
             //'pt',
         ],
     ],

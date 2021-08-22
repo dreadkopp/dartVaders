@@ -21,4 +21,4 @@ Auth::routes([
     'register' => false
 ]);
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/profile/image', [\App\Http\Controllers\Admin\VoyagerUserController::class, 'avatar'])->name('user.avatar.upload');
