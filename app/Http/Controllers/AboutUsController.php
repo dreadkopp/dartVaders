@@ -19,7 +19,7 @@ class AboutUsController extends Controller
      */
     public function serve() {
         $users = User::query()
-            ->where('show_in_listing')
+            ->where('show_in_listing','>',0)
             ->get();
 
         $content = Page::query()
