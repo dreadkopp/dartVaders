@@ -22,3 +22,5 @@ Auth::routes([
 ]);
 
 Route::post('/profile/image', [\App\Http\Controllers\Admin\VoyagerUserController::class, 'avatar'])->name('user.avatar.upload');
+Route::put('/admin/users/{id}', [\App\Http\Controllers\Admin\VoyagerUserController::class, 'update'])->name('voyager.users.update');
+Route::patch('/admin/users/{id}', [\App\Http\Controllers\Admin\VoyagerUserController::class, 'update'])->name('voyager.users.update');

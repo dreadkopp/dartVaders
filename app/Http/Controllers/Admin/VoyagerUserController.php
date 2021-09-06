@@ -61,7 +61,7 @@ class VoyagerUserController extends BaseVoyagerUserController
 
         $user = Auth::user();
 
-        $img_link = $user->name.'__'.$user->id.'.jpg';
+        $img_link = str_replace(' ','-',$user->name).'__'.$user->id.'.jpg';
 
         Storage::disk('public')->put($img_link,$img_blob);
 

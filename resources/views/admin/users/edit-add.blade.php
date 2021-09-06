@@ -56,7 +56,7 @@
             <div class="col-md-2">
                 <div class="panel panel panel-bordered panel-warning">
                     <div class="panel-body">
-                        <img style="width:128px;height:128px" class="img-fluid" id="current_avatar" src="{{ asset($user->avatar) }}">
+                        <img style="width:128px;height:128px" class="img-fluid" id="current_avatar" src="/storage/{{ $user->avatar }}">
                     </div>
                 </div>
             </div>
@@ -83,6 +83,48 @@
                                       width: 100%;
                                       height: 12rem;
                                       ">{{ $user->bio }}</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="panel panel panel-bordered panel-warning">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="setup_board">Setup Board</label>
+                            <textarea data-name="setup_board" name="setup_board" style="
+                                      width: 100%;
+                                      height: 12rem;
+                                      ">{{ $user->setup_board }}</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="panel panel panel-bordered panel-warning">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="setup_arrows">Setup Pfeile</label>
+                            <textarea data-name="setup_arrows" name="setup_arrows" style="
+                                      width: 100%;
+                                      height: 12rem;
+                                      ">{{ $user->setup_arrows }}</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="panel panel panel-bordered panel-warning">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="patches">Patches</label>
+                            <textarea data-name="patches" name="patches" style="
+                                      width: 100%;
+                                      height: 12rem;
+                                      ">{{ $user->patches }}</textarea>
                         </div>
                     </div>
                 </div>
